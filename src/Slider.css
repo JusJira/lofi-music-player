@@ -1,0 +1,67 @@
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 9999px;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #04AA6D;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #04AA6D;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+
+.Modal.open{
+    animation: bounce-in 500ms ease-in;
+}
+.Modal.close{
+    animation: bounce-out 500ms ease-in;
+}
+
+.Show.open{
+  animation: bounce-in-but 200ms ease-in;
+}
+.Show.close{
+  animation: bounce-out-but 500ms ease-in;
+}
+
+@keyframes bounce-in-but{
+  0%    {opacity: 0;   transform: scale(0.8);}
+  100%  {opacity: 1;   transform: scale(1);}
+}
+
+@keyframes bounce-out-but{
+  0%    {opacity: 1;   transform: scale(1);}
+  100%  {opacity: 0;   transform: scale(0.5);}
+}
+
+@keyframes bounce-in{
+    0%    {opacity: 0;   transform: scale(0.5); transform: translateY(400px);}
+    100%  {opacity: 1;   transform: scale(1); transform: translateY(0px);}
+}
+@keyframes bounce-out{
+    0%    {opacity: 1;   transform: scale(1); transform: translateY(0px);}
+    100%  {opacity: 0;   transform: scale(0.5); transform: translateY(400px);}
+}

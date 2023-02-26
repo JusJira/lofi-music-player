@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p,button {
+    font-family: 'Shantell Sans', cursive;
+}
