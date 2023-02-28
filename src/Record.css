@@ -1,6 +1,7 @@
 :root {
   --background : #9dbc96;
   --focused: #00425A;
+  --image-url: url('https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg');
 }
 
 body{
@@ -41,7 +42,7 @@ body.focused {
     -webkit-transform: rotateX(50deg) rotateY(-3deg);
     z-index:5;
   }
-  
+
   #disk:before{
     position:absolute;
     top:-20px;
@@ -49,6 +50,10 @@ body.focused {
     width:300px;
     height:300px;
     background:#383838;
+    /* background-image: var(--image-url);
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    background-position: center; */
     border-radius: 150px;
     box-shadow:0px 3px #252525;
     content:'';
@@ -83,7 +88,9 @@ body.focused {
     left:10px;
     width:90px;
     height:45px;
-    background:#ac5151;
+    /* background:#ac5151; */
+    /* background-image: url('https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg');
+    background-size: cover; */
     border-radius: 90px 90px 0 0;
     content:'';
   }
@@ -95,7 +102,13 @@ body.focused {
     width:100px;
     height:100px;
     background:#9dbc96;
+    background:#9dbc96;
+    background-image: var(--image-url);
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 90px;
+    
     content:'';
   }
   

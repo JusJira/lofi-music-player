@@ -67,8 +67,10 @@ function Record() {
         setLoaded(true)
     }, [])
 
+    const [image,setImage] = useState('')
+
     useEffect(() => {
-        axios.get('https://noembed.com/embed?url=' + url).then((res) => { setTitle(res.data.title) })
+        axios.get('https://noembed.com/embed?url=' + url).then((res) => { setTitle(res.data.title); setImage(res.data.thumbnail_url) })
     }, [url])
 
     useEffect(() => {
@@ -149,8 +151,8 @@ function Record() {
                     </div>
                     <div id="table"></div>
                     <div id="button" onClick={handlePlayPause}></div>
-                    <div id="disk">
-                        <div id="label"></div>
+                    <div id="disk" style={{ "--image-url": 'url('+image+')' } as React.CSSProperties}>
+                        <div id="label" style={{ "--image-url": 'url('+image+')' } as React.CSSProperties}></div>
                     </div>
                     <div id="axis-shadow"></div>
                     <div id="axis"></div>
@@ -236,7 +238,7 @@ function Record() {
                                                                     <button
                                                                         type="button"
                                                                         className="w-[80%] inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                                                        onClick={() => {setUrl('https://www.youtube.com/watch?v=jfKfPfyJRdk')}}
+                                                                        onClick={() => {setUrl('https://www.youtube.com/watch?v=jfKfPfyJRdk'); closeModal()}}
                                                                     >
                                                                         Default
                                                                     </button>
@@ -273,3 +275,7 @@ function Record() {
 }
 
 export default Record
+
+function customInit(engine: any, Engine: any) {
+    throw new Error('Function not implemented.');
+}
